@@ -1,17 +1,30 @@
+
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      Evenements
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+
+  <ion-list *ngFor="let item of posts; let i = index">
+    
+    <ion-card>
+      <ion-item >
+        <h1>{{ item.NomEvenement }}</h1>
+        <p>{{ item.DateEvenement }} {{ item.HeureEvenement }} </p>
+      </ion-item>
+      <ion-item>
+      <h2>{{ item.NomBde }}</h2>
+      </ion-item>
+      <ion-card-content>
+          
+          <p>{{ item.DescEvenement }}</p>
+          <br>
+          <p> {{ item.LieuEvenement }} ></p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>
